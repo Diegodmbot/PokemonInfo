@@ -1,17 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getPokemons } from "../services/pokemonName";
 
-export function usePokemon({ pokemonName }) {
+export function usePokemon({ search }) {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
     const fetchPokemons = async () => {
-      const pokemons = await getPokemons();
-      setPokemons(pokemons);
+      const allPokemons = await getPokemons();
+      setPokemons(allPokemons);
     };
 
     fetchPokemons();
   }, []);
 
-  return { pokemons };
+  const filteredPokemons = useMemo(() => {
+    return search
+      ? pokemons.filter((pokemon) =>
+          pokemon.name.toLowerCase().includes(search.toLowerCase())
+        )
+      : pokemons;
+  }, [pokemons, search]);
+  console;
+  return { pokemons: filteredPokemons };
 }
