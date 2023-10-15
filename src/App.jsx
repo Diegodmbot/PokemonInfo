@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Pokemon } from "./components/Pokemon";
-import { usePokemon } from "./hocks/usePokemon";
+import { usePokemon } from "./hooks/usePokemon";
 
 function App() {
   const [search, setSearch] = useState("");

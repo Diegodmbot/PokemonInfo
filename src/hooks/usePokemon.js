@@ -9,8 +9,12 @@ export function usePokemon({ search }) {
       const allPokemons = await getPokemons();
       setPokemons(allPokemons);
     };
-
-    fetchPokemons();
+    try {
+      fetchPokemons();
+    } catch (error) {
+      console.log("Fetching pokemons error");
+      console.log(error);
+    }
   }, []);
 
   const filteredPokemons = useMemo(() => {
