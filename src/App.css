@@ -29,6 +29,10 @@ main {
   justify-content: center;
   text-align: center;
   border-bottom: 10px;
+  border: 4px;
+  border-color: gray;
+  border-radius: 8px;
+  border-style: solid;
 }
 
 .pokemon h3 {
