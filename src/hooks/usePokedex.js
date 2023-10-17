@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getPokemons } from "../services/pokemonName";
 
-export function usePokemon({ search }) {
+export function usePokedex({ search }) {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
