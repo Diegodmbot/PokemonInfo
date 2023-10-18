@@ -6,6 +6,7 @@ import { usePokedex } from "./hooks/usePokedex";
 function App() {
   const [search, setSearch] = useState("");
   const { pokemons } = usePokedex({ search });
+  console.log("Holaa");
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -16,8 +17,8 @@ function App() {
     <>
       <div className="page">
         <header>
-          <h1>Pokedex</h1>
-          <form>
+          <h1>Pokemon Info</h1>
+          <form className="pokedex_form">
             <input
               type="text"
               onChange={handleChange}

@@ -1,0 +1,230 @@
+.pokemon {
+  display: grid;
+  text-align: center;
+  border: 4px;
+  border-radius: 8px;
+  border-color: var(--color-backcard);
+  border-style: solid;
+  width: 250px;
+  height: 360px;
+  margin-bottom: 3px;
+}
+
+.pokemon h3 {
+  margin-top: 16px;
+}
+
+.pokemon img {
+  transform: scale(0.8);
+}
+
+.front_card {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.back_card {
+  background-color: var(--color-backcard);
+  border-radius: 4px;
+}
+
+.stats {
+  list-style: none;
+  text-align: left;
+  padding: 8px;
+}
+
+.pokemon_type {
+  font-size: 10pt;
+  color: #f8f8f8;
+  text-shadow: 0px 1px 1px #807870;
+  margin: 2px;
+  display: inline-block;
+}
+
+.fire {
+  background: #f08030;
+  border-top-color: #f8d030;
+  border-bottom-color: #c03028;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.grass {
+  background: #78c850;
+  border-top-color: #a8e038;
+  border-bottom-color: #508030;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.water {
+  background: #6890f0;
+  border-top-color: #98d8ff;
+  border-bottom-color: #386ce0;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.electric {
+  background: #f8d030;
+  border-top-color: #fff860;
+  border-bottom-color: #c0a818;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.ice {
+  background: #98d8d8;
+  border-top-color: #c0f8f8;
+  border-bottom-color: #58c8d8;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.fighting {
+  background: #c03028;
+  border-top-color: #f85848;
+  border-bottom-color: #a81810;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.poison {
+  background: #a040a0;
+  border-top-color: #c868c0;
+  border-bottom-color: #682a68;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.ground {
+  background: #e0c068;
+  border-top-color: #f8f878;
+  border-bottom-color: #c0a848;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.flying {
+  background: #a890f0;
+  border-top-color: #c8a0f8;
+  border-bottom-color: #685898;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.psychic {
+  background: #f85888;
+  border-top-color: #ffaac8;
+  border-bottom-color: #c01848;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.bug {
+  background: #a8b820;
+  border-top-color: #d8e030;
+  border-bottom-color: #688818;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.rock {
+  background: #b8a038;
+  border-top-color: #e0c068;
+  border-bottom-color: #887820;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.ghost {
+  background: #705898;
+  border-top-color: #a890f0;
+  border-bottom-color: #483850;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.dragon {
+  background: #7038f8;
+  border-top-color: #a8a8f0;
+  border-bottom-color: #483890;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}
+
+.dark {
+  background: #705848;
+  border-top-color: #a890f0;
+  border-bottom-color: #483850;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.steel {
+  background: #b8b8d0;
+  border-top-color: #d8d8d0;
+  border-bottom-color: #787878;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.fairy {
+  background: #f0b6bc;
+  border-top-color: #f8d0d8;
+  border-bottom-color: #c06870;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+  padding-inline: 0.3em;
+}
+
+.normal {
+  background: #a8a878;
+  border-top-color: #d8d8c0;
+  border-bottom-color: #787850;
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 0.15em;
+}

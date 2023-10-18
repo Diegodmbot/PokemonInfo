@@ -1,4 +1,5 @@
 import { Pokemon } from "./Pokemon";
+import "./Pokedex.css";
 
 function PokemonNoResults() {
   return <div>No results</div>;

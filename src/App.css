@@ -1,45 +1,24 @@
+:root {
+  --color-backcard: rgba(167, 164, 177, 0.679);
+}
+
 .page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 16px;
 }
 
 main {
   display: flex;
   justify-content: center;
-  width: 100%;
-}
-
-.pokedex {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 4px;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pokemon {
-  display: grid;
-  align-items: center;
   justify-items: center;
+  width: 100%;
+}
+
+.pokedex_form {
+  display: flex;
   justify-content: center;
-  text-align: center;
-  border: 4px;
-  border-color: gray;
-  border-radius: 8px;
-  border-style: solid;
-}
-
-.pokemon h3 {
-  margin-top: 16px;
-  margin-bottom: 0px;
-}
-
-.pokemon img {
-  border-radius: 8px;
-  transform: scale(0.7);
 }
