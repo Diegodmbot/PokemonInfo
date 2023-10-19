@@ -6,7 +6,6 @@ import { usePokedex } from "./hooks/usePokedex";
 function App() {
   const [search, setSearch] = useState("");
   const { pokemons } = usePokedex({ search });
-  console.log("Holaa");
 
   const handleChange = (event) => {
     event.preventDefault();

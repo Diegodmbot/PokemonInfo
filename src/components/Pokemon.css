@@ -5,9 +5,9 @@
   border-radius: 8px;
   border-color: var(--color-backcard);
   border-style: solid;
-  width: 250px;
+  width: var(--card-width);
   height: 360px;
-  margin-bottom: 3px;
+  margin: 5px;
 }
 
 .pokemon h3 {
@@ -26,12 +26,34 @@
 .back_card {
   background-color: var(--color-backcard);
   border-radius: 4px;
+  width: var(--card-width);
 }
 
 .stats {
-  list-style: none;
+  width: 100%;
+}
+
+.stats_name {
+  width: 25%;
+  text-align: right;
+}
+
+.stats_value {
+  width: 12%;
   text-align: left;
-  padding: 8px;
+}
+
+.stats_chart {
+  width: auto;
+}
+
+.stats_chart .stats_bar {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  border: 1px solid #807870;
+  margin: 2px;
+  display: inline-block;
 }
 
 .pokemon_type {

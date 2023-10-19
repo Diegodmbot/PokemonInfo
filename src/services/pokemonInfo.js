@@ -7,10 +7,17 @@ export const getPokemonInfo = async (id) => {
     return {
       order: pokemonInfo.order,
       types: pokemonInfo.types.map((type) => type.type.name),
-      stats: pokemonInfo.stats.map((stat) => ({
-        name: stat.stat.name,
-        value: stat.base_stat,
-      })),
+      stats: pokemonInfo.stats.map((stat) => {
+        const value = stat.base_stat;
+        if (stat.stat.name === "special-attack") {
+          return { name: "sp-atk", value };
+        }
+        if (stat.stat.name === "special-defense") {
+          return { name: "sp-def", value };
+        }
+        const name = stat.stat.name;
+        return { name, value };
+      }),
     };
   } catch (error) {
     console.log("Can't get pokemons list");

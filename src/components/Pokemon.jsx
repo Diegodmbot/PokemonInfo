@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { getPokemonInfo } from "../services/pokemonInfo";
+import { BarChart } from "./StatsBarChart";
 import "./Pokemon.css";
 
 export function Pokemon({ name, image, id }) {
@@ -12,9 +13,7 @@ export function Pokemon({ name, image, id }) {
     setClick(!click);
     if (isFirstClick.current) {
       const pokemonInfo = await getPokemonInfo(pokemonId.current);
-      console.log(pokemonInfo);
       setPokemon(pokemonInfo);
-      console.log(pokemon);
     }
     isFirstClick.current = false;
   };
@@ -29,14 +28,7 @@ export function Pokemon({ name, image, id }) {
               <div className={type}>{type}</div>
             </span>
           ))}
-          <ul className="stats">
-            {pokemon?.stats.map((stat) => (
-              <li key={stat.name}>
-                <p>{`${stat.name}: ${stat.value}`}</p>
-                <p></p>
-              </li>
-            ))}
-          </ul>
+          {pokemon?.stats && <BarChart stats={pokemon?.stats} />}
         </div>
       ) : (
         <div className="front_card">
