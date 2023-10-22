@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getPokedex } from "../services/pokedexInfo";
 
 export function usePokedex({ search }) {
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState(null);
 
   useEffect(() => {
     const fetchPokemons = async () => {

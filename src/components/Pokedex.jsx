@@ -16,6 +16,9 @@ function ListOfPokemons({ pokemons }) {
 }
 
 export function Pokedex({ pokemons }) {
+  if (pokemons === null) {
+    return <div>Loading...</div>;
+  }
   const hasPokemons = pokemons?.length > 0;
   return hasPokemons ? (
     <ListOfPokemons pokemons={pokemons} />

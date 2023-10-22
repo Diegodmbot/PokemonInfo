@@ -1,41 +1,29 @@
-import { useRef, useState } from "react";
-import { getPokemonInfo } from "../services/pokemonInfo";
-import { BarChart } from "./StatsBarChart";
+import { useRef } from "react";
 import "./Pokemon.css";
 
-export function Pokemon({ name, image, id }) {
-  const [click, setClick] = useState(false);
-  const pokemonId = useRef(id);
-  const isFirstClick = useRef(true);
-  const [pokemon, setPokemon] = useState(null);
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFlip } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-flip";
+import { FrontCard } from "./FrontCard";
+import { BackCard } from "./BackCard";
 
-  const handleClick = async () => {
-    setClick(!click);
-    if (isFirstClick.current) {
-      const pokemonInfo = await getPokemonInfo(pokemonId.current);
-      setPokemon(pokemonInfo);
-    }
-    isFirstClick.current = false;
-  };
+export function Pokemon({ name, image, id }) {
+  const pokemonId = useRef(id);
 
   return (
-    <li className="pokemon" onClick={handleClick}>
-      {click ? (
-        <div className="back_card">
-          <h3>{pokemon?.order && `#${pokemon?.order}`}</h3>
-          {pokemon?.types.map((type) => (
-            <span className="pokemon_type" key={type}>
-              <div className={type}>{type}</div>
-            </span>
-          ))}
-          {pokemon?.stats && <BarChart stats={pokemon?.stats} />}
-        </div>
-      ) : (
-        <div className="front_card">
-          <h2>{name.split("-")[0]}</h2>
-          <img src={image} alt={name} />
-        </div>
-      )}
-    </li>
+    <Swiper
+      effect={"flip"}
+      loop={true}
+      modules={[EffectFlip]}
+      className="pokemon"
+    >
+      <SwiperSlide>
+        <FrontCard className="front_card" name={name} image={image} />
+      </SwiperSlide>
+      <SwiperSlide className="back_card">
+        <BackCard pokemonId={pokemonId} />
+      </SwiperSlide>
+    </Swiper>
   );
 }

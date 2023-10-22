@@ -23,7 +23,7 @@ ChartJS.register(
 const options = {
   devicePixelRatio: 3,
   responsive: true,
-  indexAxis: "y",
+  indexAxis: "x",
   maintainAspectRatio: true,
   aspectRatio: 1,
   elements: {
@@ -38,7 +38,7 @@ const options = {
     },
     title: {
       display: false,
-      text: "Stats",
+      text: "",
     },
     colors: {
       forceOverride: true,
@@ -53,7 +53,7 @@ const options = {
         color: "rgba(0, 0, 0, 0)",
       },
       ticks: {
-        display: false,
+        display: true,
       },
     },
     y: {
@@ -70,7 +70,7 @@ export function BarChart({ stats }) {
     labels,
     datasets: [
       {
-        label: "Stats",
+        label: "Value",
         data: stats.map((stat) => stat.value),
       },
     ],
