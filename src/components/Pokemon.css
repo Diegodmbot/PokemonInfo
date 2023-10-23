@@ -1,24 +1,24 @@
-.pokemon {
+.container {
   display: grid;
   text-align: center;
-  border: 4px;
-  border-radius: 8px;
-  border-color: var(--color-backcard);
-  border-style: solid;
   width: var(--card-width);
   height: 360px;
   margin: 5px;
 }
 
-.pokemon h3 {
+.container h3 {
   margin-top: 16px;
 }
 
-.pokemon img {
+.container img {
   transform: scale(0.8);
 }
 
 .front_card {
+  border: 4px;
+  border-radius: 8px;
+  border-color: var(--color-backcard);
+  border-style: solid;
   background-color: white;
   border-radius: 8px;
 }

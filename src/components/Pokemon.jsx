@@ -16,10 +16,10 @@ export function Pokemon({ name, image, id }) {
       effect={"flip"}
       loop={true}
       modules={[EffectFlip]}
-      className="pokemon"
+      className="container"
     >
-      <SwiperSlide>
-        <FrontCard className="front_card" name={name} image={image} />
+      <SwiperSlide className="front_card">
+        <FrontCard name={name} image={image} />
       </SwiperSlide>
       <SwiperSlide className="back_card">
         <BackCard pokemonId={pokemonId} />
