@@ -29,33 +29,6 @@
   width: var(--card-width);
 }
 
-.stats {
-  width: 100%;
-}
-
-.stats_name {
-  width: 25%;
-  text-align: right;
-}
-
-.stats_value {
-  width: 12%;
-  text-align: left;
-}
-
-.stats_chart {
-  width: auto;
-}
-
-.stats_chart .stats_bar {
-  height: 10px;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  border: 1px solid #807870;
-  margin: 2px;
-  display: inline-block;
-}
-
 .pokemon_type {
   font-size: 10pt;
   color: #f8f8f8;
