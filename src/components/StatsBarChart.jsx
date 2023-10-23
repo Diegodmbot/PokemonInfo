@@ -29,6 +29,7 @@ const options = {
   elements: {
     bar: {
       borderWidth: 1,
+      borderColor: "rgba(0, 0, 0, 1)",
     },
   },
   plugins: {
@@ -54,12 +55,19 @@ const options = {
       },
       ticks: {
         display: true,
+        color: "rgba(0, 0, 0, 1)",
       },
     },
     y: {
       grid: {
         color: "rgba(255, 255, 255, 0)",
       },
+      ticks: {
+        color: "rgba(0, 0, 0, 1)",
+      },
+      min: 0,
+      max: 255,
+      beginAtZero: true,
     },
   },
 };

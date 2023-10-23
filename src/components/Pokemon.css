@@ -23,10 +23,19 @@
   border-radius: 8px;
 }
 
+.front_card h2 {
+  color: #000;
+}
+
 .back_card {
   background-color: var(--color-backcard);
   border-radius: 4px;
   width: var(--card-width);
+}
+
+.back_card h2,
+h3 {
+  color: #000;
 }
 
 .pokemon_type {
