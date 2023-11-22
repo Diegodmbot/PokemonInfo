@@ -28,8 +28,11 @@
 }
 
 .back_card {
+  border: 4px;
+  border-radius: 8px;
+  border-color: var(--color-backcard);
+  border-style: solid;
   background-color: var(--color-backcard);
-  border-radius: 4px;
   width: var(--card-width);
 }
 

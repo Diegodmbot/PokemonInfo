@@ -1,11 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import { Pokedex } from "./components/Pokedex";
-import { usePokedex } from "./hooks/usePokedex";
 
 function App() {
   const [search, setSearch] = useState("");
-  const { pokemons } = usePokedex({ search });
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -26,10 +24,10 @@ function App() {
             />
           </form>
         </header>
+        <main>
+          <Pokedex search={search} />
+        </main>
       </div>
-      <main>
-        <Pokedex pokemons={pokemons} />
-      </main>
     </>
   );
 }

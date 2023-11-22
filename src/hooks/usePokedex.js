@@ -1,20 +1,26 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getPokedex } from "../services/pokedexInfo";
 
 export function usePokedex({ search }) {
   const [pokemons, setPokemons] = useState(null);
-
-  useEffect(() => {
-    const fetchPokemons = async () => {
-      const allPokemons = await getPokedex();
-      setPokemons(allPokemons);
-    };
+  const url = useRef("https://pokeapi.co/api/v2/pokemon");
+  const fetchPokemons = async () => {
+    if (!url.current) return;
     try {
-      fetchPokemons();
+      const [newPokemons, nextURL] = await getPokedex(url.current);
+      const allPokemons = pokemons
+        ? [...pokemons, ...newPokemons]
+        : newPokemons;
+      setPokemons(allPokemons);
+      url.current = nextURL;
     } catch (error) {
       console.log("Fetching pokemons error");
       console.log(error);
     }
+  };
+
+  useEffect(() => {
+    fetchPokemons();
   }, []);
 
   const filteredPokemons = useMemo(() => {
@@ -24,6 +30,6 @@ export function usePokedex({ search }) {
         )
       : pokemons;
   }, [pokemons, search]);
-  console;
-  return { pokemons: filteredPokemons };
+
+  return [{ pokemons: filteredPokemons }, fetchPokemons, url.current];
 }

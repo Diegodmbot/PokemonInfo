@@ -23,3 +23,5 @@ Los Pokemon se muestran como un grid responsive, hay un ancho máximo de 800px a
 - SwiperJS para el efecto de giro (<https://swiperjs.com/>)
 
 - ChartJS para la gráfica (<https://www.chartjs.org/>)
+
+## TODO
