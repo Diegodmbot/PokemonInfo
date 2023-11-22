@@ -10,14 +10,26 @@
   width: 100%;
 }
 
+@media (prefers-color-scheme: light) {
+  .page header {
+    background-color: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page header {
+    background-color: #202b38;
+  }
+}
+
 .page header {
   top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #202b38;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   position: fixed;
   z-index: 10;
 }
@@ -27,6 +39,8 @@
   justify-content: center;
   justify-items: center;
   margin-top: 130px;
+  width: 100%;
+  max-width: 800px;
 }
 
 .pokedex_form {
