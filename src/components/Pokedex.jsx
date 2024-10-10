@@ -25,14 +25,16 @@ export function Pokedex({ search }) {
   const hasPokemons = pokemons?.length > 0;
 
   return hasPokemons ? (
-    <InfiniteScroll
-      dataLength={pokemons.length}
-      next={fetchPokemons}
-      hasMore={url !== null}
-      loader={<h4>Loading...</h4>}
-    >
-      <ListOfPokemons pokemons={pokemons} />
-    </InfiniteScroll>
+    <div style={{ width: "100%" }}>
+      <InfiniteScroll
+        dataLength={pokemons.length}
+        next={fetchPokemons}
+        hasMore={url !== null}
+        loader={<h4>Loading...</h4>}
+      >
+        <ListOfPokemons pokemons={pokemons} />
+      </InfiniteScroll>
+    </div>
   ) : (
     <PokemonNoResults />
   );
