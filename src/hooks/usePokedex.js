@@ -23,7 +23,7 @@ export function usePokedex({ search }) {
   const [filteredPokemons, totalFilteredPokemons] = useMemo(() => {
     const searchedPokemons = search
       ? pokemons.filter((pokemon) =>
-          pokemon.name.toLowerCase().includes(search.toLowerCase())
+          pokemon.name.toLowerCase().startsWith(search.toLowerCase())
         )
       : pokemons;
     return [searchedPokemons?.slice(0, pokemonsToShow), searchedPokemons?.length];
