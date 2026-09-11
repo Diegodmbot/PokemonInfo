@@ -9,10 +9,7 @@ export function usePokedex({ search }) {
     if (!url.current) return;
     try {
       const newPokemons = await getPokedex(url.current);
-      const allPokemons = pokemons
-        ? [...pokemons, ...newPokemons]
-        : newPokemons;
-      setPokemons(allPokemons);
+      setPokemons(newPokemons);
     } catch (error) {
       console.log("Fetching pokemons error");
       console.log(error);
@@ -23,13 +20,13 @@ export function usePokedex({ search }) {
     fetchPokemons();
   }, []);
 
-  const filteredPokemons = useMemo(() => {
+  const [filteredPokemons, totalFilteredPokemons] = useMemo(() => {
     const searchedPokemons = search
       ? pokemons.filter((pokemon) =>
           pokemon.name.toLowerCase().includes(search.toLowerCase())
         )
       : pokemons;
-    return searchedPokemons?.slice(0, pokemonsToShow);
+    return [searchedPokemons?.slice(0, pokemonsToShow), searchedPokemons?.length];
   }, [search, pokemons, pokemonsToShow]);
 
   const handleShowMore = () => {
@@ -37,8 +34,10 @@ export function usePokedex({ search }) {
   }
 
   const hasMorePokemons = useMemo(() => {
-    return filteredPokemons?.length < pokemons?.length;
-  }, [filteredPokemons, pokemons]);
+    console.log("pokemonsToShow",pokemonsToShow);
+    console.log("totalFilteredPokemons", totalFilteredPokemons);
+    return pokemonsToShow < totalFilteredPokemons;
+  }, [totalFilteredPokemons, pokemons]);
 
   return [{ pokemons: filteredPokemons, hasMorePokemons }, handleShowMore];
 }
