@@ -18,18 +18,17 @@ function ListOfPokemons({ pokemons }) {
 }
 
 export function Pokedex({ search }) {
-  const [{ pokemons }, fetchPokemons, url] = usePokedex({ search });
+  const [{ pokemons, hasMorePokemons }, handleShowMore] = usePokedex({ search });
   if (pokemons === null) {
     return <div>Loading...</div>;
   }
   const hasPokemons = pokemons?.length > 0;
-
   return hasPokemons ? (
     <div style={{ width: "100%" }}>
       <InfiniteScroll
         dataLength={pokemons.length}
-        next={fetchPokemons}
-        hasMore={url !== null}
+        next={handleShowMore}
+        hasMore={hasMorePokemons}
         loader={<h4>Loading...</h4>}
       >
         <ListOfPokemons pokemons={pokemons} />

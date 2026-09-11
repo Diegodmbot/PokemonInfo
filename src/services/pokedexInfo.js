@@ -10,9 +10,8 @@ export const getPokedex = async (url) => {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`,
       };
     });
-    const nextURL = pokemons.next;
 
-    return [pokemonsList, nextURL];
+    return pokemonsList;
   } catch (error) {
     console.log("Can't get pokemons list");
     console.log(error);
