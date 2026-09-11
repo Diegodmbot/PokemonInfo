@@ -34,10 +34,8 @@ export function usePokedex({ search }) {
   }
 
   const hasMorePokemons = useMemo(() => {
-    console.log("pokemonsToShow",pokemonsToShow);
-    console.log("totalFilteredPokemons", totalFilteredPokemons);
     return pokemonsToShow < totalFilteredPokemons;
-  }, [totalFilteredPokemons, pokemons]);
+  }, [pokemonsToShow, totalFilteredPokemons]);
 
   return [{ pokemons: filteredPokemons, hasMorePokemons }, handleShowMore];
 }
