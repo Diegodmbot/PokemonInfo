@@ -2,7 +2,7 @@ export const getPokedex = async (url) => {
   try {
     const pokemons = await fetch(url).then((response) => response.json());
     const pokemonsList = pokemons.results.map((pokemon) => {
-      const pokemonName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+      const pokemonName = pokemon.name.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
       const pokemonId = pokemon.url.split("/")[6];
       return {
         name: pokemonName,
