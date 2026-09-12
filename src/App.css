@@ -32,6 +32,9 @@
   max-width: 800px;
   position: fixed;
   z-index: 10;
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-backcard);
+  border-bottom-width: 1px;
 }
 
 .page main {
