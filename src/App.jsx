@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Pokedex } from "./components/Pokedex";
+import { TypesTable } from "./components/TypesTable";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -25,7 +26,8 @@ function App() {
           </form>
         </header>
         <main>
-          <Pokedex search={search} />
+          {/* <Pokedex search={search} /> */}
+          <TypesTable></TypesTable>
         </main>
       </div>
     </>

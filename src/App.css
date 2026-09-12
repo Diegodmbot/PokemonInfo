@@ -3,13 +3,6 @@
   --card-width: 250px;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
 @media (prefers-color-scheme: light) {
   .page header {
     background-color: white;
@@ -20,6 +13,17 @@
   .page header {
     background-color: #202b38;
   }
+}
+
+body {
+  max-width: 75%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 
 .page header {
@@ -43,7 +47,7 @@
   justify-items: center;
   margin-top: 130px;
   width: 100%;
-  max-width: 850px;
+  /* max-width: 850px; */
 }
 
 .pokedex_form {

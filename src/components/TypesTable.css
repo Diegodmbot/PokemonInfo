@@ -1,0 +1,8 @@
+.typesCell {
+  width: max-content;
+}
+
+.typesText {
+  font-size: 0.8rem;
+  max-width: fit-content;
+}
